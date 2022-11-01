@@ -44,18 +44,22 @@ def linebot():
                     line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='https://cdn-icons-png.flaticon.com/512/685/685842.png', preview_image_url='https://cdn-icons-png.flaticon.com/512/685/685842.png'))
                 elif text == 'test' or text == '即時天氣':  
                     confirm_template_message = TemplateSendMessage(
-    alt_text='Confirm template',
-    template=ConfirmTemplate(
-        text='Are you sure?',
-        actions=[
-            PostbackAction(
-                label='postback',
-                display_text='postback text',
-                data='action=buy&itemid=1'
+    alt_text='ImageCarousel template',
+    template=ImageCarouselTemplate(
+        columns=[
+            ImageCarouselColumn(
+                image_url='https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png',
+                action=MessageAction(
+                    label='皮卡丘',
+                    text='皮卡丘'
+                )
             ),
-            MessageAction(
-                label='message',
-                text='message text'
+            ImageCarouselColumn(
+                image_url='https://upload.wikimedia.org/wikipedia/en/5/59/Pok%C3%A9mon_Squirtle_art.png',
+                action=MessageAction(
+                    label='傑尼龜',
+                    text='傑尼龜'
+                )
             )
         ]
     )
