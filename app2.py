@@ -39,7 +39,7 @@ def linebot():
                 elif text == '回波動態圖' or text == '動態圖':
                     reply_image(f'https://watch.ncdr.nat.gov.tw/00_Wxmap/5A8_DBZ_TRACK/dbztracks.gif', reply_token, access_token)
                 elif text == '文字' or text == 'text':
-                    line_bot_api.reply_message(reply_token, TextSendMessage(text='002Hello World!'))
+                    line_bot_api.reply_message(reply_token, TextSendMessage(text='Hello World!'))
                 elif text == 'sticker' or text == '貼圖':
                     line_bot_api.reply_message(reply_token, StickerSendMessage(package_id=1, sticker_id=2))
                 elif text == 'pic' or text == '圖片':
@@ -54,18 +54,17 @@ def linebot():
                 title='即時天氣資訊',
                 text='description1',
                 actions=[
-                    PostbackAction(
+                    MessageAction(
                         label='雷達回波',
-                        display_text='雷達回波',
-                        data='action=buy&itemid=1'
+                        text='雷達回波'
                     ),
                     MessageAction(
                         label='回波動態圖',
                         text='回波動態圖'
                     ),
-                    URIAction(
+                    MessageAction(
                         label='溫度分布圖',
-                        uri='http://example.com/1'
+                        text='http://example.com/1'
                     )
                 ]
             ),
@@ -74,18 +73,17 @@ def linebot():
                 title='即時天氣資訊',
                 text='description2',
                 actions=[
-                    PostbackAction(
+                    MessageAction(
                         label='累積雨量',
-                        display_text='累積雨量',
-                        data='action=buy&itemid=2'
+                        text='累積雨量'
                     ),
                     MessageAction(
                         label='地震資訊',
                         text='地震資訊'
                     ),
-                    URIAction(
+                    MessageAction(
                         label='Test',
-                        uri='http://example.com/2'
+                        text='Test'
                     )
                 ]
             )
