@@ -52,7 +52,7 @@ def linebot():
             CarouselColumn(
                 thumbnail_image_url='https://i.imgur.com/40ejOWi.jpeg',
                 title='即時天氣資訊',
-                text='',
+                text='天氣資訊',
                 actions=[
                     PostbackAction(
                         label='雷達回波',
