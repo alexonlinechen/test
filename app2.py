@@ -44,28 +44,52 @@ def linebot():
                     line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='https://cdn-icons-png.flaticon.com/512/685/685842.png', preview_image_url='https://cdn-icons-png.flaticon.com/512/685/685842.png'))
                 elif text == 'test' or text == '即時天氣':  
                     confirm_template_message = TemplateSendMessage(
-    alt_text='ImageCarousel template',
-    template=ImageCarouselTemplate(
+    alt_text='Carousel template',
+    template=CarouselTemplate(
         columns=[
-            ImageCarouselColumn(
-                image_url='https://example.com/item1.jpg',
-                action=PostbackAction(
-                    label='postback1',
-                    display_text='postback text1',
-                    data='action=buy&itemid=1'
-                )
+            CarouselColumn(
+                thumbnail_image_url='https://example.com/item1.jpg',
+                title='this is menu1',
+                text='description1',
+                actions=[
+                    PostbackAction(
+                        label='postback1',
+                        display_text='postback text1',
+                        data='action=buy&itemid=1'
+                    ),
+                    MessageAction(
+                        label='message1',
+                        text='message text1'
+                    ),
+                    URIAction(
+                        label='uri1',
+                        uri='http://example.com/1'
+                    )
+                ]
             ),
-            ImageCarouselColumn(
-                image_url='https://example.com/item2.jpg',
-                action=PostbackAction(
-                    label='postback2',
-                    display_text='postback text2',
-                    data='action=buy&itemid=2'
-                )
+            CarouselColumn(
+                thumbnail_image_url='https://example.com/item2.jpg',
+                title='this is menu2',
+                text='description2',
+                actions=[
+                    PostbackAction(
+                        label='postback2',
+                        display_text='postback text2',
+                        data='action=buy&itemid=2'
+                    ),
+                    MessageAction(
+                        label='message2',
+                        text='message text2'
+                    ),
+                    URIAction(
+                        label='uri2',
+                        uri='http://example.com/2'
+                    )
+                ]
             )
         ]
     )
-                    )
+)
                     line_bot_api.reply_message(reply_token, confirm_template_message)
                 else:
                     reply_message(f'無效的指令', reply_token, access_token)    # 如果是一般文字，直接回覆 無效的指令
