@@ -52,7 +52,7 @@ def linebot():
             CarouselColumn(
                 thumbnail_image_url='https://i.imgur.com/40ejOWi.jpeg',
                 title='即時天氣資訊',
-                text='天氣資訊',
+                text='description1',
                 actions=[
                     PostbackAction(
                         label='雷達回波',
@@ -63,15 +63,15 @@ def linebot():
                         label='回波動態圖',
                         text='回波動態圖'
                     ),
-                    MessageAction(
+                    URIAction(
                         label='溫度分布圖',
-                        text='溫度分布圖'
+                        uri='http://example.com/1'
                     )
                 ]
             ),
             CarouselColumn(
                 thumbnail_image_url='https://i.imgur.com/40ejOWi.jpeg',
-                title='this is menu2',
+                title='即時天氣資訊',
                 text='description2',
                 actions=[
                     PostbackAction(
@@ -83,9 +83,9 @@ def linebot():
                         label='地震資訊',
                         text='地震資訊'
                     ),
-                    MessageAction(
-                        label='test',
-                        text='test'
+                    URIAction(
+                        label='Test',
+                        uri='http://example.com/2'
                     )
                 ]
             )
