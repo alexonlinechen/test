@@ -30,7 +30,7 @@ def linebot():
                 text = json_data['events'][0]['message']['text']
                 if text == '雷達回波' or text == '雷達':
                     reply_image(f'https://cwbopendata.s3.ap-northeast-1.amazonaws.com/MSC/O-A0058-003.png?{time.time_ns()}', reply_token, access_token)
-                if text == '即時溫度' or text == '溫度':
+                elif text == '溫度分布圖' or text == '溫度':
                     reply_image(f'https://www.cwb.gov.tw/Data/temperature/temp.jpg?{time.time_ns()}', reply_token, access_token)    
                 elif text == '地震資訊' or text == '地震':              # 如果是地震相關的文字
                     msg = earth_quake()                               # 爬取地震資訊
@@ -64,7 +64,7 @@ def linebot():
                     ),
                     MessageAction(
                         label='溫度分布圖',
-                        text='http://example.com/1'
+                        text='ht溫度分布圖'
                     )
                 ]
             ),
