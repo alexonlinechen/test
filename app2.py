@@ -52,38 +52,40 @@ def linebot():
             CarouselColumn(
                 thumbnail_image_url='https://example.com/item1.jpg',
                 title='即時天氣資訊',
-                text='天氣資訊',
+                text='description1',
                 actions=[
-                    MessageAction(
-                        label='雷達回波圖',
-                        display_text='雷達回波圖',
+                    PostbackAction(
+                        label='雷達回波',
+                        display_text='雷達回波',
+                        data='action=buy&itemid=1'
                     ),
                     MessageAction(
                         label='回波動態圖',
                         text='回波動態圖'
                     ),
-                    MessageAction(
-                        label='即時溫度',
-                        text='即時溫度'
+                    URIAction(
+                        label='溫度分布圖',
+                        uri='http://example.com/1'
                     )
                 ]
             ),
             CarouselColumn(
-                thumbnail_image_url='https://example.com/item1.jpg',
-                title='即時天氣資訊',
-                text='天氣資訊',
+                thumbnail_image_url='https://example.com/item2.jpg',
+                title='this is menu2',
+                text='description2',
                 actions=[
-                    MessageAction(
+                    PostbackAction(
                         label='累積雨量',
                         display_text='累積雨量',
+                        data='action=buy&itemid=2'
                     ),
                     MessageAction(
-                        label='最新地震訊息',
-                        text='最新地震訊息'
+                        label='地震資訊',
+                        text='地震資訊'
                     ),
-                    MessageAction(
-                        label='test2',
-                        text='test2'
+                    URIAction(
+                        label='uri2',
+                        uri='http://example.com/2'
                     )
                 ]
             )
