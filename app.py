@@ -88,7 +88,7 @@ def linebot():
         ]
     )
                     )
-                    line_bot_api.reply_message(reply_token, confirm_template_message)
+                    line_bot_api.push_message(reply_token, confirm_template_message)
                 else:
                     reply_message(f'無效的指令', reply_token, access_token)    # 如果是一般文字，直接回覆 無效的指令
     except:
