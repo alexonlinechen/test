@@ -1,6 +1,6 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import MessageEvent, TextMessage, TextSendMessage, StickerSendMessage, ImageSendMessage,CarouselTemplate, ImageCarouselTemplate, ImageCarouselColumn, PostbackAction, URIAction, MessageAction, TemplateSendMessage, ButtonsTemplate, URITemplateAction, MessageTemplateAction, PostbackTemplateAction, CarouselColumn, ConfirmTemplate
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, StickerSendMessage, ImageSendMessage, CarouselTemplate, ImageCarouselTemplate, ImageCarouselColumn, PostbackAction, URIAction, MessageAction, TemplateSendMessage, ButtonsTemplate, URITemplateAction, MessageTemplateAction, PostbackTemplateAction, CarouselColumn, ConfirmTemplate
 import requests, json, time, statistics
 
 app = Flask(__name__)
