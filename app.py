@@ -44,28 +44,27 @@ def linebot():
                     line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='https://cdn-icons-png.flaticon.com/512/685/685842.png', preview_image_url='https://cdn-icons-png.flaticon.com/512/685/685842.png'))
                 elif text == 'test' or text == '即時天氣':  
                     confirm_template_message = TemplateSendMessage(
-    alt_text='ButtonsTemplate',
-    template=ButtonsTemplate(
-        thumbnail_image_url='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
-        title='OXXO.STUDIO',
-        text='這是按鈕樣板',
-        actions=[
-            PostbackAction(
-                label='postback',
-                data='發送 postback'
+    alt_text='ImageCarousel template',
+    template=ImageCarouselTemplate(
+        columns=[
+            ImageCarouselColumn(
+                image_url='https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png',
+                action=MessageAction(
+                    label='皮卡丘',
+                    text='皮卡丘'
+                )
             ),
-            MessageAction(
-                label='說 hello',
-                text='hello'
-            ),
-            URIAction(
-                label='前往 STEAM 教育學習網',
-                uri='https://steam.oxxostudio.tw'
+            ImageCarouselColumn(
+                image_url='https://upload.wikimedia.org/wikipedia/en/5/59/Pok%C3%A9mon_Squirtle_art.png',
+                action=MessageAction(
+                    label='傑尼龜',
+                    text='傑尼龜'
+                )
             )
         ]
     )
                     )
-                    line_bot_api.push_message(reply_token, confirm_template_message)
+                    line_bot_api.reply_message(reply_token, confirm_template_message)
                 else:
                     reply_message(f'無效的指令', reply_token, access_token)    # 如果是一般文字，直接回覆 無效的指令
     except:
