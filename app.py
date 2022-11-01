@@ -37,32 +37,31 @@ def linebot():
                 elif text == '回波動態圖' or text == '動態圖':
                     reply_image(f'https://watch.ncdr.nat.gov.tw/00_Wxmap/5A8_DBZ_TRACK/dbztracks.gif', reply_token, access_token)
                 elif text == '文字' or text == 'text':
-                    line_bot_api.reply_message(reply_token, TextSendMessage(text='005Hello World!'))
+                    line_bot_api.reply_message(reply_token, TextSendMessage(text='002Hello World!'))
                 elif text == 'sticker' or text == '貼圖':
                     line_bot_api.reply_message(reply_token, StickerSendMessage(package_id=1, sticker_id=2))
                 elif text == 'pic' or text == '圖片':
                     line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='https://cdn-icons-png.flaticon.com/512/685/685842.png', preview_image_url='https://cdn-icons-png.flaticon.com/512/685/685842.png'))
                 elif text == 'test' or text == '即時天氣':  
                     confirm_template_message = TemplateSendMessage(
-    alt_text='ImageCarousel template',
-    template=ImageCarouselTemplate(
-        columns=[
-            ImageCarouselColumn(
-                image_url='https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png',
-                action=MessageAction(
-                    label='皮卡丘',
-                    text='皮卡丘'
-                )
-            ),
-            ImageCarouselColumn(
-                image_url='https://upload.wikimedia.org/wikipedia/en/5/59/Pok%C3%A9mon_Squirtle_art.png',
-                action=MessageAction(
-                    label='傑尼龜',
-                    text='傑尼龜'
-                )
-            )
-        ]
-    )
+    "altText": "this is a buttons template",
+  "template": {
+    "type": "buttons",
+    "title": "標題",
+    "text": "文字",
+    "actions": [
+      {
+        "type": "message",
+        "label": "動作 1",
+        "text": "動作 1"
+      },
+      {
+        "type": "message",
+        "label": "動作 2",
+        "text": "動作 2"
+      }
+    ]
+  }
                     )
                     line_bot_api.reply_message(reply_token, confirm_template_message)
                 else:
