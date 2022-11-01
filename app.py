@@ -44,21 +44,21 @@ def linebot():
                     line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='https://cdn-icons-png.flaticon.com/512/685/685842.png', preview_image_url='https://cdn-icons-png.flaticon.com/512/685/685842.png'))
                 elif text == 'test' or text == '即時天氣':  
                     confirm_template_message = TemplateSendMessage(
-    "altText": "this is a buttons template",
-  "template": {
-    "type": "buttons",
-    "title": "標題",
-    "text": "文字",
-    "actions": [
+    'altText': 'this is a buttons template',
+  'template': {
+    'type': 'buttons',
+    'title': '標題',
+    'text': '文字',
+    'actions': [
       {
-        "type": "message",
-        "label": "動作 1",
-        "text": "動作 1"
+        'type' 'message',
+        'label': '動作 1',
+        'text': '動作 1'
       },
       {
-        "type": "message",
-        "label": "動作 2",
-        "text": "動作 2"
+        'type': 'message',
+        'label': '動作 2',
+        'text': '動作 2'
       }
     ]
   }
