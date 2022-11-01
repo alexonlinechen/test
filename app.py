@@ -49,7 +49,7 @@ def linebot():
     type: 'buttons',
     title: '標題',
     text: '文字',
-    actions': [
+    actions: [
       {
         type 'message',
         label: '動作 1',
