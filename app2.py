@@ -30,6 +30,8 @@ def linebot():
                 text = json_data['events'][0]['message']['text']
                 if text == '雷達回波' or text == '雷達':
                     reply_image(f'https://cwbopendata.s3.ap-northeast-1.amazonaws.com/MSC/O-A0058-003.png?{time.time_ns()}', reply_token, access_token)
+                if text == '即時溫度' or text == '溫度':
+                    reply_image(f'https://www.cwb.gov.tw/Data/temperature/temp.jpg?{time.time_ns()}', reply_token, access_token)    
                 elif text == '地震資訊' or text == '地震':              # 如果是地震相關的文字
                     msg = earth_quake()                               # 爬取地震資訊
                     push_message(msg[0], user_id, access_token)       # 傳送地震資訊 ( 用 push 方法，因為 reply 只能用一次 )
@@ -49,41 +51,39 @@ def linebot():
         columns=[
             CarouselColumn(
                 thumbnail_image_url='https://example.com/item1.jpg',
-                title='this is menu1',
-                text='description1',
+                title='即時天氣資訊',
+                text='天氣資訊',
                 actions=[
-                    PostbackAction(
-                        label='postback1',
-                        display_text='postback text1',
-                        data='action=buy&itemid=1'
+                    MessageAction(
+                        label='雷達回波圖',
+                        display_text='雷達回波圖',
                     ),
                     MessageAction(
-                        label='message1',
-                        text='message text1'
+                        label='回波動態圖',
+                        text='回波動態圖'
                     ),
-                    URIAction(
-                        label='uri1',
-                        uri='http://example.com/1'
+                    MessageAction(
+                        label='即時溫度',
+                        text='即時溫度'
                     )
                 ]
             ),
             CarouselColumn(
-                thumbnail_image_url='https://example.com/item2.jpg',
-                title='this is menu2',
-                text='description2',
+                thumbnail_image_url='https://example.com/item1.jpg',
+                title='即時天氣資訊',
+                text='天氣資訊',
                 actions=[
-                    PostbackAction(
-                        label='postback2',
-                        display_text='postback text2',
-                        data='action=buy&itemid=2'
+                    MessageAction(
+                        label='累積雨量',
+                        display_text='累積雨量',
                     ),
                     MessageAction(
-                        label='message2',
-                        text='message text2'
+                        label='最新地震訊息',
+                        text='最新地震訊息'
                     ),
-                    URIAction(
-                        label='uri2',
-                        uri='http://example.com/2'
+                    MessageAction(
+                        label='test2',
+                        text='test2'
                     )
                 ]
             )
