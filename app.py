@@ -44,46 +44,23 @@ def linebot():
                     line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='https://cdn-icons-png.flaticon.com/512/685/685842.png', preview_image_url='https://cdn-icons-png.flaticon.com/512/685/685842.png'))
                 elif text == 'test' or text == '即時天氣':  
                     confirm_template_message = TemplateSendMessage(
-    alt_text='CarouselTemplate',
-    template=CarouselTemplate(
-        columns=[
-            CarouselColumn(
-                thumbnail_image_url='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
-                title='選單 1',
-                text='說明文字 1',
-                actions=[
-                    PostbackAction(
-                        label='postback',
-                        data='data1'
-                    ),
-                    MessageAction(
-                        label='hello',
-                        text='hello'
-                    ),
-                    URIAction(
-                        label='oxxo.studio',
-                        uri='http://oxxo.studio'
-                    )
-                ]
+    alt_text='ButtonsTemplate',
+    template=ButtonsTemplate(
+        thumbnail_image_url='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+        title='OXXO.STUDIO',
+        text='這是按鈕樣板',
+        actions=[
+            PostbackAction(
+                label='postback',
+                data='發送 postback'
             ),
-            CarouselColumn(
-                thumbnail_image_url='https://steam.oxxostudio.tw/download/python/line-template-message-demo2.jpg',
-                title='選單 2',
-                text='說明文字 2',
-                actions=[
-                    PostbackAction(
-                        label='postback',
-                        data='data1'
-                    ),
-                    MessageAction(
-                        label='hi',
-                        text='hi'
-                    ),
-                    URIAction(
-                        label='STEAM 教育學習網',
-                        uri='https://steam.oxxostudio.tw'
-                    )
-                ]
+            MessageAction(
+                label='說 hello',
+                text='hello'
+            ),
+            URIAction(
+                label='前往 STEAM 教育學習網',
+                uri='https://steam.oxxostudio.tw'
             )
         ]
     )
