@@ -50,9 +50,9 @@ def linebot():
     template=CarouselTemplate(
         columns=[
             CarouselColumn(
-                thumbnail_image_url='https://example.com/item1.jpg',
+                thumbnail_image_url='https://i.imgur.com/40ejOWi.jpeg',
                 title='即時天氣資訊',
-                text='description1',
+                text='',
                 actions=[
                     PostbackAction(
                         label='雷達回波',
@@ -63,14 +63,14 @@ def linebot():
                         label='回波動態圖',
                         text='回波動態圖'
                     ),
-                    URIAction(
+                    MessageAction(
                         label='溫度分布圖',
-                        uri='http://example.com/1'
+                        text='溫度分布圖'
                     )
                 ]
             ),
             CarouselColumn(
-                thumbnail_image_url='https://example.com/item2.jpg',
+                thumbnail_image_url='https://i.imgur.com/40ejOWi.jpeg',
                 title='this is menu2',
                 text='description2',
                 actions=[
@@ -83,9 +83,9 @@ def linebot():
                         label='地震資訊',
                         text='地震資訊'
                     ),
-                    URIAction(
-                        label='uri2',
-                        uri='http://example.com/2'
+                    MessageAction(
+                        label='test',
+                        text='test'
                     )
                 ]
             )
