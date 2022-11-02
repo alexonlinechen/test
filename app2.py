@@ -33,7 +33,7 @@ def linebot():
                 elif text == '溫度分布圖' or text == '溫度':
                     reply_image(f'https://www.cwb.gov.tw/Data/temperature/temp.jpg?{time.time_ns()}', reply_token, access_token) 
                 elif text == '雨量累積圖' or text == '雨量':
-                    msg = get_raindata()
+                    get_raindata()
                     line_bot_api.reply_message(reply_token, TextSendMessage(msg))
                     #line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='msg', preview_image_url='msg'))    
                 elif text == '地震資訊' or text == '地震':              # 如果是地震相關的文字
@@ -322,14 +322,13 @@ def aqi(address):
     
     # 解析雨量圖片函式
 def get_raindata():
-    msg = '找不到雨量圖片'           # 預設回傳的訊息
-    try:
+    #msg = '找不到雨量圖片'           # 預設回傳的訊息
+    #try:
         url = 'https://www.cwb.gov.tw/Data/js/rainfall/RainfallImg_Day.js'
         data = requests.get(url).text
         final = re.search(r'20.*J8', data).group(0)   #搜尋符合圖片字串
         msg = f'https://www.cwb.gov.tw/Data/rainfall/{final}.jpg'
         print(msg)
-        #break     
-        return msg    #   回傳msg
-    except:
-        return msg    # 如果取資料有發生錯誤，直接回傳 msg
+        #return msg    #   回傳msg
+    #except:
+        #return msg    # 如果取資料有發生錯誤，直接回傳 msg
