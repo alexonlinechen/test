@@ -326,9 +326,9 @@ def get_raindata():
         url = 'https://www.cwb.gov.tw/Data/js/rainfall/RainfallImg_Day.js'
         data = requests.get(url).text
         final = re.search(r'20.*J8', data).group(0)   #搜尋符合圖片字串
-        final2 = f'https://www.cwb.gov.tw/Data/rainfall/{final}.jpg'
-        print(final2)
-        break     
+        msg = f'https://www.cwb.gov.tw/Data/rainfall/{final}.jpg'
+        print(msg)
+        #break     
         return msg    # 回傳msg
     except:
         return msg    # 如果取資料有發生錯誤，直接回傳 msg
