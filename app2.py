@@ -31,7 +31,10 @@ def linebot():
                 if text == '雷達回波' or text == '雷達':
                     reply_image(f'https://cwbopendata.s3.ap-northeast-1.amazonaws.com/MSC/O-A0058-003.png?{time.time_ns()}', reply_token, access_token)
                 elif text == '溫度分布圖' or text == '溫度':
-                    reply_image(f'https://www.cwb.gov.tw/Data/temperature/temp.jpg?{time.time_ns()}', reply_token, access_token)    
+                    reply_image(f'https://www.cwb.gov.tw/Data/temperature/temp.jpg?{time.time_ns()}', reply_token, access_token) 
+                elif text == '雨量累積圖' or text == '雨量':
+                    msg = get_raindata()  
+                    line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='msg', preview_image_url='msg'))    
                 elif text == '地震資訊' or text == '地震':              # 如果是地震相關的文字
                     msg = earth_quake()                               # 爬取地震資訊
                     push_message(msg[0], user_id, access_token)       # 傳送地震資訊 ( 用 push 方法，因為 reply 只能用一次 )
@@ -310,6 +313,23 @@ def aqi(address):
             if i in address:  # 如果地址裡包含鄉鎮區域名稱的 key，就直接使用對應的內容
                 msg = f'空氣品質{site_list[i]["status"]} ( AQI {site_list[i]["aqi"]} )。'
                 break
+        return msg    # 回傳 msg
+    except:
+        return msg    # 如果取資料有發生錯誤，直接回傳 msg
+    
+    
+    
+    # 解析雨量圖片函式
+def get_raindata():
+    msg = ['找不到雨量圖片','https://example.com/demo.jpg']            # 預設回傳的訊息
+    try:
+        url = 'https://www.cwb.gov.tw/Data/js/rainfall/RainfallImg_Day.js'
+        data = requests.get(url).text
+        final = re.search(r'20.*J8', data)   #搜尋符合圖片字串
+        print(final.group(0))
+
+            msg = f'https://www.cwb.gov.tw/Data/rainfall/{final.group(0)}'
+            break     
         return msg    # 回傳 msg
     except:
         return msg    # 如果取資料有發生錯誤，直接回傳 msg
