@@ -33,8 +33,9 @@ def linebot():
                 elif text == '溫度分布圖' or text == '溫度':
                     reply_image(f'https://www.cwb.gov.tw/Data/temperature/temp.jpg?{time.time_ns()}', reply_token, access_token) 
                 elif text == '雨量累積圖' or text == '雨量':
-                    msg = get_raindata()  
-                    line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='msg', preview_image_url='msg'))    
+                    msg = get_raindata()
+                    line_bot_api.reply_message(reply_token, TextSendMessage(msg))
+                    #line_bot_api.reply_message(reply_token,ImageSendMessage(original_content_url='msg', preview_image_url='msg'))    
                 elif text == '地震資訊' or text == '地震':              # 如果是地震相關的文字
                     msg = earth_quake()                               # 爬取地震資訊
                     push_message(msg[0], user_id, access_token)       # 傳送地震資訊 ( 用 push 方法，因為 reply 只能用一次 )
@@ -77,8 +78,8 @@ def linebot():
                 text='description2',
                 actions=[
                     MessageAction(
-                        label='累積雨量',
-                        text='累積雨量'
+                        label='雨量累積圖',
+                        text='雨量累積圖'
                     ),
                     MessageAction(
                         label='地震資訊',
