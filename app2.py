@@ -331,6 +331,6 @@ def get_raindata():
             final2 = f'https://www.cwb.gov.tw/Data/rainfall/{final}.jpg'
             print(final2)
             break     
-        return msg    # 回傳 msg
+        return msg    # 回傳msg
     except:
         return msg    # 如果取資料有發生錯誤，直接回傳 msg
