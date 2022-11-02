@@ -329,6 +329,7 @@ def get_raindata():
 
             #msg = f'https://www.cwb.gov.tw/Data/rainfall/{final.group(0)}'
             msg = f'https://www.cwb.gov.tw/Data/rainfall/{final}.jpg'
+            print(msg)
             break     
         return msg    # 回傳 msg
     except:
