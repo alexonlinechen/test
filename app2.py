@@ -321,14 +321,14 @@ def aqi(address):
     
     # 解析雨量圖片函式
 def get_raindata():
-    msg = ['找不到雨量圖片','https://example.com/demo.jpg']            # 預設回傳的訊息
+    msg = '找不到雨量圖片'           # 預設回傳的訊息
     try:
         url = 'https://www.cwb.gov.tw/Data/js/rainfall/RainfallImg_Day.js'
         data = requests.get(url).text
-        final = re.search(r'20.*J8', data)   #搜尋符合圖片字串
-        print(final.group(0))
+        final = re.search(r'20.*J8', data)final.group(0)   #搜尋符合圖片字串
 
-            msg = f'https://www.cwb.gov.tw/Data/rainfall/{final.group(0)}'
+            #msg = f'https://www.cwb.gov.tw/Data/rainfall/{final.group(0)}'
+            msg = f'https://www.cwb.gov.tw/Data/rainfall/{final}.jpg'
             break     
         return msg    # 回傳 msg
     except:
