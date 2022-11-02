@@ -328,8 +328,8 @@ def get_raindata():
         final = re.search(r'20.*J8', data).group(0)   #搜尋符合圖片字串
 
             #msg = f'https://www.cwb.gov.tw/Data/rainfall/{final.group(0)}'
-            msg = f'https://www.cwb.gov.tw/Data/rainfall/{final}.jpg'
-            print(msg)
+            final2 = f'https://www.cwb.gov.tw/Data/rainfall/{final}.jpg'
+            print(final2)
             break     
         return msg    # 回傳 msg
     except:
