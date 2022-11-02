@@ -1,7 +1,7 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, StickerSendMessage, ImageSendMessage, CarouselTemplate, ImageCarouselTemplate, ImageCarouselColumn, PostbackAction, URIAction, MessageAction, TemplateSendMessage, ButtonsTemplate, URITemplateAction, MessageTemplateAction, PostbackTemplateAction, CarouselColumn, ConfirmTemplate
-import requests, json, time, statistics
+import requests, json, time, statistics ,re
 
 app = Flask(__name__)
 
