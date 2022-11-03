@@ -1,0 +1,56 @@
+<label class="button">
+<input type="radio" name="button" checked/>
+<span class="outer"><span class="inner"></span></span>
+測試按鈕1 </label>
+
+<label class="button">
+<input type="radio" name="button"/>
+<span class="outer"><span class="inner"></span></span>
+測試按鈕 2 </label>
+
+<css>
+  .button {
+	background: #cfe7fa;
+	background: linear-gradient(180deg, #cfe7fa, #6393c1 100%);
+	border: 1px solid #6393c1;
+	border-radius: 40px;
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .5), inset -1px -1px 0 rgba(0, 0, 0, .5);
+	cursor: pointer;
+	display:block;
+	margin-bottom:10px;
+	font: 15px Arial, Verdana, Geneva, sans-serif;
+	line-height: 41px;
+	padding-right: 20px;
+}
+.button:hover .inner {
+	opacity: .5;
+}
+.button input {
+	display: none;
+}
+.button input:checked + .outer .inner {
+	opacity: 1;
+}
+.button .outer {
+	background: #2989d8;
+	background: radial-gradient(center, ellipse cover, #2989d8 0%, #101354 99%);
+	border: 1px solid black;
+	border-radius: 20px;
+	display: block;
+	float: left;
+	height: 20px;
+	margin: 10px;
+	width: 20px;
+}
+.button .inner {
+	background: #e4f5fc;
+	background: radial-gradient(center, ellipse cover, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+	border-radius: 20px;
+	display: block;
+	height: 14px;
+	margin: 3px;
+	opacity: 0;
+	transition: opacity .5s;
+	width: 14px;
+}
+  </css>
