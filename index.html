@@ -19,6 +19,8 @@
 測試按鈕 2 </label>
 	  
 	  <button onclick="sayHello()">Click Me</button>
+	  <button onclick="test()">Click Me2</button>
+	  <button onclick="test1()">Click Me3</button>
 <script>
 function sayHello(){
     alert('Hello');
@@ -73,10 +75,14 @@ function sayHello(){
   </style>
 	  
 <script>
+	function test(){
+ 
 	liff.closeWindow();
+	}
 	</script>
 	  
  <script>
+	 function test2(){
 	liff.sendMessages([
   {
     type: 'text',
@@ -88,6 +94,7 @@ function sayHello(){
   .catch(function(error) {
     console.log(error);
   });
+	 }
 	</script>
 </body>
 </html>
