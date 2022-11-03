@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no">
-    <title>分享 LINE 數位版名片</title>
+    <title>功能按鈕</title>
   </head>
   <body>
-	  
+	  333
 <label class="button">
 <input type="radio" name="button" checked/>
 <span class="outer"><span class="inner"></span></span>
@@ -17,6 +17,13 @@
 <input type="radio" name="button"/>
 <span class="outer"><span class="inner"></span></span>
 測試按鈕 2 </label>
+	  
+	  <button onclick="sayHello()">Click Me</button>
+<script>
+function sayHello(){
+    alert('Hello');
+}
+</script>
 
 <style>
   .button {
@@ -64,5 +71,23 @@
 	width: 14px;
 }
   </style>
-</bosd>
+	  
+<script>
+	liff.closeWindow();
+	</script>
+	  
+ <script>
+	liff.sendMessages([
+  {
+    type: 'text',
+    text: 'Hello, World!'
+  }
+]).then(function(res) {
+    console.log(res)
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+	</script>
+</body>
 </html>
