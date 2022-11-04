@@ -8,6 +8,15 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    
+    <body>
+    
+    <label>要傳送的訊息:</label>
+    <input class="form-control" type="text" id="msg" value="測試" /><br />
+    <button class="btn btn-primary" id="ButtonSendMsg">要傳送的訊息</button>
+   </body>
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     
@@ -28,13 +37,6 @@
       
 
 
-        $("#ButtonGetProfile").click(function() {
-          liff.getProfile().then(profile => {
-            $("#UserInfo").val(profile.displayName);
-            alert("done");
-          });
-        });
-
         $("#ButtonSendMsg").click(function() {
           liff
             .sendMessages([
@@ -51,14 +53,5 @@
       });
     </script>
   </head>
-  <body>
-    <button class="liff_btn">Get user profile</button>
-    <label>user id:</label>
-    <input class="form-control" type="text" id="userid" /> <br />
-    <button class="btn btn-primary" id="ButtonGetProfile">Get Profile</button>
-    <input class="form-control" type="text" id="UserInfo" /><br />
-    <label>要傳送的訊息:</label>
-    <input class="form-control" type="text" id="msg" value="測試" /><br />
-    <button class="btn btn-primary" id="ButtonSendMsg">要傳送的訊息</button>
-  </body>
+
 </html>
