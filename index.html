@@ -105,7 +105,10 @@
                 text: "回波動態圖"
               }
             ])
+             .then(() => {
+              liff.closeWindow(); // 關掉頁面
             });
+          });
 
         
       
@@ -119,7 +122,7 @@
               }
             ])
             .then(() => {
-              alert("done");
+              //alert("done");
               liff.closeWindow(); // 關掉頁面
             });
           });
