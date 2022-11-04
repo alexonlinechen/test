@@ -11,6 +11,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
+      
+      var liffID = '1657616936-NXOQllbK';
+
+liff.init({
+  liffId: liffID
+}).then(function() {
+  console.log('LIFF init');
+  
+  // 這邊開始寫使用其他功能
+  
+}).catch(function(error) {
+  console.log(error);
+});
+      
       function initializeApp(data) {
         $("#userid").val(data.context.userId);
       }
