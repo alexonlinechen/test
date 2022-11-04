@@ -95,7 +95,14 @@
   });
       
       
-      
+           $("#RadargifBtn").click(function() {
+          liff.sendMessages([
+              {
+                type: "text",
+                text: "回波動態圖"
+              }
+            ])
+            });
 
         
       
@@ -113,6 +120,7 @@
               //alert("done");
               liff.closeWindow(); // 關掉頁面
             });
+          
      });     
     });
     
