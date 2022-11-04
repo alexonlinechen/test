@@ -52,7 +52,7 @@
         累積雨量</button></div> 
         
         <div class="col">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="RainBtn">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="QuakeBtn">
         地震</button></div>  
 
      
@@ -107,24 +107,45 @@
                 type: "text",
                 text: "雷達回波"
               }
-            ])
-             .then(() => {
-              liff.closeWindow(); // 關掉頁面
-            });
-          });
+            ]) 
+           });
       
       
-                 $("#GifBtn").click(function() {
+          $("#GifBtn").click(function() {
           liff.sendMessages([
               {
                 type: "text",
                 text: "回波動態圖"
               }
             ])
-             .then(() => {
-              liff.closeWindow(); // 關掉頁面
-            });
-          });
+                 });
+      
+          $("#TempBtn").click(function() {
+          liff.sendMessages([
+              {
+                type: "text",
+                text: "溫度分布圖"
+              }
+            ])
+                 });
+      
+          $("#RainBtn").click(function() {
+          liff.sendMessages([
+              {
+                type: "text",
+                text: "雨量累積態圖"
+              }
+            ])
+                 });
+      
+          $("#QuakeBtn").click(function() {
+          liff.sendMessages([
+              {
+                type: "text",
+                text: "地震資訊"
+              }
+            ])
+                 });
 
 
         
